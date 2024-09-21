@@ -1,14 +1,13 @@
 // import video1 from "./";
 import React, { Suspense, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import { useEffect } from "react";
 import "./App.css";
-import { OrbitControls, Sky, useAnimations, useGLTF } from "@react-three/drei";
+import { OrbitControls, useAnimations, useGLTF } from "@react-three/drei";
 import modelUrl from "./models/bfw4xy.glb";
-import modelUrl4 from "./models/boardtexture4.glb";
-
-import modelUrl3 from "./models/fischpoke.glb";
 import modelUrl2 from "./models/woman.glb";
+import modelUrl3 from "./models/fischpoke.glb";
+import modelUrl4 from "./models/boardtexture4.glb";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -38,8 +37,6 @@ function App() {
   }
 
   function Model3() {
-    // const { scene } = useGLTF("fischpoke.glb");
-
     const model = useGLTF(modelUrl3);
     const { actions } = useAnimations(model.animations, model.scene);
 
@@ -244,7 +241,7 @@ function App() {
     <div className="App">
       {loading ? (
         <div className="loadingdiv">
-          <h1 className="loading"> geladen...</h1>
+          <h1 className="loading"> welcome..</h1>
         </div>
       ) : (
         <div className="geladen">
