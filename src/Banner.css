@@ -1,0 +1,50 @@
+.banner {
+  height: 700px;
+
+  background-size: cover;
+  background-image: url("./itachi.jpg");
+  filter: opacity(1);
+  background-position: center center;
+  z-index: -2;
+}
+.banner__contents {
+  margin-left: 30px;
+  padding-top: 240px;
+  animation: 2s ease 0s 1 fadein;
+}
+.banner__title {
+  font-size: 3rem;
+  font-weight: 800;
+  padding-bottom: 0.3rem;
+  width: 200px;
+  margin: auto;
+  transition: 250ms;
+}
+.banner__title:hover {
+  transform: scale(1.24);
+}
+
+.banner__discription {
+  width: 45rem;
+  max-width: 360px;
+  height: 80px;
+  line-height: 1.3;
+  padding-top: 1rem;
+  font-size: 0.8rem;
+}
+.banner__button {
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 2px;
+  padding: 10px 35px 10px 35px;
+  margin: 0 5px 0 5px;
+  background-color: rgba(52, 51, 51, 0.5);
+}
+
+.banner__button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  transition: all 0.2s;
+}

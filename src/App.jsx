@@ -1,71 +1,14 @@
 // import video1 from "./";
-import React, { Suspense, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import "./App.css";
-import { OrbitControls, useAnimations, useGLTF } from "@react-three/drei";
-import modelUrl from "./models/bfw4xy.glb";
-import modelUrl2 from "./models/woman.glb";
-import modelUrl3 from "./models/fischpoke.glb";
-import modelUrl4 from "./models/boardtexture4.glb";
+
+import Banner from "./Banner";
+import Row from "./Row";
+// import DreiD from "./DreiD";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  function Model1() {
-    const model = useGLTF(modelUrl);
-
-    return (
-      <primitive
-        scale={4}
-        position={[0, -2, 1]}
-        rotation={[0, 0.9, 0]}
-        object={model.scene}
-      />
-    );
-  }
-  function Model2() {
-    const model = useGLTF(modelUrl2);
-
-    return (
-      <primitive
-        scale={5}
-        position={[0, -4, 0]}
-        rotation={[0, 0, 0]}
-        object={model.scene}
-      />
-    );
-  }
-
-  function Model3() {
-    const model = useGLTF(modelUrl3);
-    const { actions } = useAnimations(model.animations, model.scene);
-
-    useEffect(() => {
-      actions?.laufen.play();
-    }, []);
-
-    return (
-      <primitive
-        scale={0.7}
-        position={[0, 0, 0]}
-        rotation={[0, 1.9, 0]}
-        object={model.scene}
-      />
-    );
-  }
-
-  function Model4() {
-    const model = useGLTF(modelUrl4);
-
-    return (
-      <primitive
-        scale={0.7}
-        position={[0, 0, 0]}
-        rotation={[0, 1.9, 1]}
-        object={model.scene}
-      />
-    );
-  }
 
   useEffect(() => {
     setTimeout(() => {
@@ -245,11 +188,10 @@ function App() {
         </div>
       ) : (
         <div className="geladen">
-          <div className="banner">
-            <div className="Spruch">Faradii</div>
-            {/* <div className="Spruch2"> Schau dich ruhig um..</div> */}
-          </div>
+          <Banner />
+
           <div className="Website">
+            <div className="leer"></div>
             <div className="weitereProjekte_Liste">
               {weitereProjekte.map((video, index) => (
                 <div className="weitereProjekte_Rahmen" key={index}>
@@ -257,7 +199,8 @@ function App() {
                 </div>
               ))}
             </div>
-            <div className="titeltext3d">Web</div>
+            <div className="leer"></div>
+            {/* <div className="titeltext3d">-projects-</div> */}
             <div className="VideosListe">
               {videoSources.map((video, index) => (
                 <div className="Rahmen" key={index}>
@@ -273,69 +216,12 @@ function App() {
                 </div>
               ))}
             </div>
-            <div className="titeltext3d">3d</div>
-            <div className="container">
-              <Canvas className="d1">
-                <ambientLight intensity={5.5} />
-                <pointLight position={[0.0, 0.0, 0.0]} intensity={1} />
-                <Suspense fallback={null}>
-                  <Model1 />
-                </Suspense>
-                <OrbitControls
-                  minPolarAngle={Math.PI / 3}
-                  maxPolarAngle={Math.PI / 2}
-                  minDistance={10}
-                  maxDistance={10}
-                  zoomSpeed={0.5}
-                  zoom0={0}
-                />
-              </Canvas>
-              <Canvas className="d1">
-                <ambientLight intensity={15.5} />
-                <pointLight position={[0.0, 0.0, 0.0]} intensity={1} />
-                <Suspense fallback={null}>
-                  <Model2 />
-                </Suspense>
-                <OrbitControls
-                  minPolarAngle={Math.PI / 3}
-                  maxPolarAngle={Math.PI / 2}
-                  minDistance={12}
-                  maxDistance={12}
-                  zoomSpeed={0.5}
-                />
-              </Canvas>
-              <Canvas className="d1">
-                <ambientLight intensity={1.5} />
-                <pointLight position={[10, 10, 10]} />
-                <Suspense fallback={null}>
-                  <Model3 />
-                </Suspense>
-                <OrbitControls
-                  minPolarAngle={Math.PI / 3}
-                  maxPolarAngle={Math.PI / 2}
-                  minDistance={5}
-                  maxDistance={5}
-                  zoomSpeed={0.5}
-                />
-              </Canvas>
-              <Canvas className="d1">
-                <ambientLight intensity={20} />
-                <pointLight position={[-4.0, 2.0, -2.0]} intensity={25} />
-                <Suspense fallback={null}>
-                  <Model4 />
-                </Suspense>
-                <OrbitControls
-                  minPolarAngle={Math.PI / 3}
-                  maxPolarAngle={Math.PI / 2}
-                  minDistance={10}
-                  maxDistance={10}
-                  zoomSpeed={0.5}
-                  zoom0={0}
-                />
-              </Canvas>
-            </div>
-            <div className="container2"></div>
+            {/* <Row /> */}
           </div>
+          {/* <DreiD selectedModel={3} /> */}
+          {/* <DreiD selectedModel={4} /> */}
+          <div className="leer"></div>
+          <div className="leer">Hier folgen weitere Inhalte</div>
         </div>
       )}
     </div>
