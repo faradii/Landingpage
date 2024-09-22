@@ -13,12 +13,9 @@ html {
   height: 300px;
   width: 300px;
 } */
-.App {
-  color: white;
-  width: 100vw;
-}
 
 .App {
+  color: white;
   -webkit-user-select: none;
   -moz-user-select: -moz-none;
   -ms-user-select: none;
@@ -28,10 +25,11 @@ html {
   margin: 0;
 }
 .Website {
-  height: 100vh;
+  /* height: 400vh; */
 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.58)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.934)),
     url("./bg.jpg");
+  width: 100%;
 }
 
 .Spruch {
@@ -40,8 +38,6 @@ html {
   text-align: center;
   animation: 2s ease 0s 1 fadeinx;
   color: rgb(132, 7, 7);
-}
-p {
 }
 
 @keyframes fadeout {
@@ -93,9 +89,10 @@ p {
   padding: 10px;
   background-image: linear-gradient(
     to top,
-    rgba(52, 1, 81, 0.176) 100%,
+    rgba(17, 4, 24, 0.176) 100%,
     rgba(176, 176, 176, 0.311) 100%
   );
+
   color: rgb(255, 255, 255);
   border: 1px solid rgb(54, 53, 53);
 
@@ -122,24 +119,31 @@ p {
 .VideosListe {
   animation: 2s ease-in-out 0s 1 fadein;
 
-  display: flex;
-  overflow-y: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* mit display flex überragt es immer , zsm mit 90% width passt es jetzt*/
 
-  width: 100%;
+  /* overflow-y: hidden; */
+
+  width: 90%;
+
   margin: auto;
+  /* background: rgba(16, 15, 15, 0.526); */
+
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 .VideosListe::-webkit-scrollbar {
   display: none;
 }
-
+.weitereProjekte_Liste {
+  /* background: rgba(33, 32, 32, 0); */
+}
 .weitereProjekte_Liste,
 .text {
   display: flex;
   overflow-y: hidden;
   flex-wrap: wrap;
-  width: 100%;
+  /* width: 100%; */
   margin: auto;
 
   -ms-overflow-style: none;
@@ -148,7 +152,7 @@ p {
 
 .container {
   margin: auto;
-  width: 80vw;
+  /* width: 80vw; */
   display: flex;
 }
 
@@ -157,6 +161,16 @@ p {
 
   margin-top: 0px;
   font-size: 3em;
+}
+.leer {
+  height: 100vh;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.827), rgb(0, 0, 0)),
+    url("./g.jpg");
+  margin-top: -64px;
+}
+.Page3_titel {
+  padding-top: 200px;
 }
 
 @media only screen and (max-width: 400px) {
@@ -186,24 +200,7 @@ p {
 
     justify-content: center;
     align-items: center;
-    /* padding: 10px; */
 
     flex: 1 0 50px; /* Jeder Container soll gleichmäßig wachsen, aber nicht kleiner als 200px */
   }
-  /* .Website::before {
-    content: "";
-    background-image: url("/public/swipe2.png");
-    background-size: contain;
-    z-index: 1;
-    color: rgb(255, 255, 255);
-    width: 50px;
-    height: 50px;
-    align-content: center;
-
-    border-radius: 10px;
-    background-color: rgba(255, 251, 251, 0);
-    position: absolute;
-    top: 245%;
-    left: 39%;
-  } */
 }

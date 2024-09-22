@@ -191,7 +191,7 @@ function App() {
           <Banner />
 
           <div className="Website">
-            <div className="leer"></div>
+            {/* <div className="leer"></div> */}
             <div className="weitereProjekte_Liste">
               {weitereProjekte.map((video, index) => (
                 <div className="weitereProjekte_Rahmen" key={index}>
@@ -199,7 +199,7 @@ function App() {
                 </div>
               ))}
             </div>
-            <div className="leer"></div>
+            {/* <div className="leer"></div> */}
             {/* <div className="titeltext3d">-projects-</div> */}
             <div className="VideosListe">
               {videoSources.map((video, index) => (
@@ -217,11 +217,13 @@ function App() {
               ))}
             </div>
             {/* <Row /> */}
+            {/* <div className="leer"></div> */}
+            <div className="leer">
+              <h1 className="Page3_titel">Hier folgen weitere Inhalte</h1>
+            </div>
           </div>
           {/* <DreiD selectedModel={3} /> */}
           {/* <DreiD selectedModel={4} /> */}
-          <div className="leer"></div>
-          <div className="leer">Hier folgen weitere Inhalte</div>
         </div>
       )}
     </div>

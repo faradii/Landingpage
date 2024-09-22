@@ -4,7 +4,7 @@ import "./Banner.css";
 // import requests from "./requests";
 
 function Banner() {
-  const [movie, setmovie] = useState([]); // singular
+  // const [movie, setmovie] = useState([]); // singular
 
   // useEffect(() => {
   //   async function fetchData() {
